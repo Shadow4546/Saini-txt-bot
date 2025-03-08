@@ -1,6 +1,4 @@
-Welcome Dosto....
-NON-DRM bot made by @nikhil.saini.khe (TELEGRAM)
-
+Credit - Nikhil Saini
 Direct Deploy via click these button 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nikhilsaini098/Saini-txt-bot)
 
