@@ -432,6 +432,22 @@ async def txt_handler(bot: Client, m: Message):
                         time.sleep(e.x)
                         count+=1
                         continue
+                        
+                elif ".pdf*" in url:
+                    try:
+                        url_part, key_part = url.split("*")
+                        url = f"https://dragoapi.vercel.app/pdf/{url_part}*{key_part}"
+                        cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
+                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        os.system(download_cmd)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                        count += 1
+                        os.remove(f'{name}.pdf')
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        count += 1
+                        continue   
 
                 elif ".pdf" in url:
                     try:
